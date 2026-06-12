@@ -24,3 +24,6 @@ yarn-error.log*
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+# Enunciado de la prueba (no se versiona en el repo de entrega)
+*.pdf
