@@ -62,48 +62,23 @@ Cris_Prueba/
 
 ---
 
-## ✅ Requisitos previos
-
-- **Node.js 18 o superior** (probado con Node 24) y **npm**.
-
-Verifícalo con:
-
-```bash
-node --version
-npm --version
-```
-
----
-
 ## ▶️ Ejecución local
 
-El proyecto son **dos aplicaciones independientes**. Hay que levantar las dos
-(en dos terminales).
-
-### 1) Backend (API)
+**Requisito:** Node.js 18+ y npm.
 
 ```bash
-cd backend
-npm install
-npm run dev      # modo desarrollo (recarga automática)  ·  o:  npm start
+# 1. Clonar el repositorio
+git clone https://github.com/crizzzDev/logistics-monitor.git
+cd logistics-monitor
+
+# 2. Backend (API) — en una terminal
+cd backend && npm install && npm run dev      # → http://localhost:4000
+
+# 3. Frontend — en otra terminal (desde la raíz del proyecto)
+cd frontend && npm install && npm run dev     # → http://localhost:5173
 ```
 
-La API queda disponible en **http://localhost:4000**.
-Pruébala abriendo http://localhost:4000/api/services.
-
-### 2) Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-La app queda disponible en **http://localhost:5173** (Vite la abre en el navegador).
-
-> El frontend usa por defecto `http://localhost:4000` como URL de la API, así que
-> no necesitas configurar nada para desarrollo local. Si quieres cambiarla, copia
-> `frontend/.env.example` a `frontend/.env` y ajusta `VITE_API_URL`.
+Abre **http://localhost:5173**. El frontend usa `http://localhost:4000` como API por defecto, así que no requiere configuración adicional.
 
 ---
 
