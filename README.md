@@ -14,9 +14,11 @@ con Node + Express.
 
 | Recurso | URL |
 | --- | --- |
-| Aplicación (frontend) | _completar tras desplegar_ |
-| API (backend) | _completar tras desplegar_ |
-| Repositorio | _completar_ |
+| Aplicación (frontend) | https://logistics-monitor-web.onrender.com |
+| API (backend) | https://logistics-monitor-api.onrender.com |
+| Repositorio | https://github.com/crizzzDev/logistics-monitor |
+
+> ⏳ La API está en el plan gratuito de Render: si estuvo inactiva, la **primera** carga puede tardar ~30-50 s en "despertar". Las siguientes son inmediatas.
 
 ---
 
