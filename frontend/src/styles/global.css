@@ -1,0 +1,360 @@
+/* =========================================================================
+   Sistema de diseño — Logistics Monitor
+   Tokens (variables CSS) + reset + temas claro/oscuro + utilidades base.
+   Centralizar los tokens aquí mantiene colores, espaciados y tipografía
+   consistentes en toda la app y hace trivial el modo oscuro.
+   ========================================================================= */
+
+:root {
+  /* Marca / acento */
+  --brand: #4f46e5;
+  --brand-strong: #4338ca;
+  --brand-soft: #eef2ff;
+  --brand-contrast: #ffffff;
+
+  /* Superficies y texto (tema claro por defecto) */
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --surface-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-soft: #94a3b8;
+
+  /* Estados de servicio: par (texto / fondo) */
+  --st-activo-fg: #15803d;
+  --st-activo-bg: #dcfce7;
+  --st-finalizado-fg: #1d4ed8;
+  --st-finalizado-bg: #dbeafe;
+  --st-alarma-fg: #b91c1c;
+  --st-alarma-bg: #fee2e2;
+  --st-pendiente-fg: #b45309;
+  --st-pendiente-bg: #fef3c7;
+
+  /* Niveles de alarma */
+  --lv-normal-fg: #15803d;
+  --lv-normal-bg: #dcfce7;
+  --lv-media-fg: #b45309;
+  --lv-media-bg: #fef3c7;
+  --lv-alta-fg: #b91c1c;
+  --lv-alta-bg: #fee2e2;
+
+  /* Colores sólidos para gráficos */
+  --c-activo: #22c55e;
+  --c-finalizado: #3b82f6;
+  --c-alarma: #ef4444;
+  --c-pendiente: #f59e0b;
+  --c-normal: #22c55e;
+  --c-media: #f59e0b;
+  --c-alta: #ef4444;
+
+  /* Tipografía */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+
+  /* Espaciado */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-8: 3rem;
+
+  /* Radios y sombras */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.16);
+
+  --header-h: 64px;
+  --maxw: 1200px;
+  --transition: 160ms ease;
+}
+
+/* Tema oscuro: solo se redefinen los tokens necesarios. */
+[data-theme='dark'] {
+  --brand: #818cf8;
+  --brand-strong: #a5b4fc;
+  --brand-soft: #1e1b4b;
+  --brand-contrast: #0b1120;
+
+  --bg: #0b1120;
+  --surface: #131c31;
+  --surface-2: #0f1729;
+  --surface-hover: #1c2941;
+  --border: #243149;
+  --border-strong: #334155;
+  --text: #e8eefb;
+  --text-muted: #94a3b8;
+  --text-soft: #64748b;
+
+  --st-activo-fg: #4ade80;
+  --st-activo-bg: rgba(34, 197, 94, 0.15);
+  --st-finalizado-fg: #60a5fa;
+  --st-finalizado-bg: rgba(59, 130, 246, 0.15);
+  --st-alarma-fg: #f87171;
+  --st-alarma-bg: rgba(239, 68, 68, 0.15);
+  --st-pendiente-fg: #fbbf24;
+  --st-pendiente-bg: rgba(245, 158, 11, 0.15);
+
+  --lv-normal-fg: #4ade80;
+  --lv-normal-bg: rgba(34, 197, 94, 0.15);
+  --lv-media-fg: #fbbf24;
+  --lv-media-bg: rgba(245, 158, 11, 0.15);
+  --lv-alta-fg: #f87171;
+  --lv-alta-bg: rgba(239, 68, 68, 0.15);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ----------------------------- Reset básico ----------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--brand);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar discreta y acorde al tema */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* --------------------------- Layout contenedor -------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--sp-5);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--sp-4);
+  }
+}
+
+/* ------------------------------ Animaciones ----------------------------- */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Respeta usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Accesibilidad: foco visible y consistente */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------- Componentes base --------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: background var(--transition), border-color var(--transition),
+    color var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn--primary {
+  background: var(--brand);
+  color: var(--brand-contrast);
+}
+.btn--primary:hover:not(:disabled) {
+  background: var(--brand-strong);
+}
+
+.btn--ghost {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn--ghost:hover:not(:disabled) {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+
+.btn--sm {
+  padding: 0.4rem 0.7rem;
+  font-size: var(--fs-xs);
+}
+
+/* Badge base: un punto de color + etiqueta. El color se inyecta por variante. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Bloque para estados de carga (efecto shimmer) */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    var(--surface-hover) 37%,
+    var(--surface-2) 63%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}

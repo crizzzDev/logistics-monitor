@@ -1,0 +1,47 @@
+# Blueprint de Render para desplegar TODO el proyecto en una sola plataforma.
+# Crea dos servicios: la API (Node) y el frontend (sitio estático).
+#
+# Cómo usarlo:
+#   1. Sube el repositorio a GitHub.
+#   2. En Render: New > Blueprint > selecciona el repo.
+#   3. Render detecta este archivo y crea ambos servicios.
+#   4. Tras el primer deploy, configura VITE_API_URL en el frontend con la URL
+#      pública de la API (ver README). El frontend se reconstruye solo.
+#
+# También puedes crear los servicios manualmente desde el dashboard
+# (instrucciones detalladas en el README).
+
+services:
+  # ----------------------------- Backend (API) -----------------------------
+  - type: web
+    name: logistics-monitor-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      # Por defecto la API permite cualquier origen (CORS '*'), por lo que el
+      # frontend funciona sin configurar nada. Para restringirlo, define aquí
+      # la URL del frontend, p. ej. https://logistics-monitor-web.onrender.com
+      - key: CORS_ORIGIN
+        value: '*'
+
+  # --------------------------- Frontend (estático) --------------------------
+  - type: web
+    name: logistics-monitor-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      # URL pública de la API. Se define tras desplegar el backend.
+      # sync: false hace que Render pida el valor en el dashboard.
+      - key: VITE_API_URL
+        sync: false
+    routes:
+      # Fallback de SPA: cualquier ruta sirve index.html.
+      - type: rewrite
+        source: /*
+        destination: /index.html

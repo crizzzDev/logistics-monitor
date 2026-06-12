@@ -1,0 +1,73 @@
+.wrap {
+  overflow-x: auto;
+  padding: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.table thead th {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-soft);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  background: var(--surface-2);
+}
+
+.table tbody td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.table tbody tr:hover {
+  background: var(--surface-hover);
+}
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.selected {
+  background: var(--brand-soft);
+}
+.selected:hover {
+  background: var(--brand-soft);
+}
+
+.cliente {
+  font-weight: 600;
+}
+
+.route {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+.arrow {
+  color: var(--text-soft);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.placa {
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+  background: var(--surface-2);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  font-size: var(--fs-xs);
+  border: 1px solid var(--border);
+}

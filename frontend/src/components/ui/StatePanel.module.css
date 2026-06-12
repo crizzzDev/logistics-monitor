@@ -1,0 +1,40 @@
+/* Estilos compartidos por EmptyState y ErrorState. */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sp-3);
+  padding: var(--sp-8) var(--sp-4);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-soft);
+}
+.icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.iconError {
+  background: var(--st-alarma-bg);
+  color: var(--st-alarma-fg);
+}
+
+.title {
+  font-size: var(--fs-lg);
+}
+
+.message {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  max-width: 380px;
+}

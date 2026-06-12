@@ -1,0 +1,209 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease;
+}
+
+.panel {
+  width: min(440px, 100%);
+  height: 100%;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.title {
+  font-size: var(--fs-lg);
+}
+.close {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition);
+}
+.close:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.clienteLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+}
+.cliente {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.01em;
+}
+.badges {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.routeBox {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+}
+.routePoint {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+.routePoint > div {
+  display: flex;
+  flex-direction: column;
+}
+.routeDot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid var(--brand);
+  margin: 2px 0 0 1px;
+  flex-shrink: 0;
+}
+.routePin {
+  width: 20px;
+  height: 20px;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+.routeLine {
+  width: 2px;
+  height: 22px;
+  background: var(--border-strong);
+  margin: 4px 0 4px 9px;
+}
+.routeLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
+}
+.routeCity {
+  font-size: var(--fs-md);
+  font-weight: 600;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+.field {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+.fieldIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.fieldIcon svg {
+  width: 18px;
+  height: 18px;
+}
+.fieldLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
+}
+.fieldValue {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.fieldValueMono {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+}
+
+.obs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.obsLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.obsLabel svg {
+  width: 16px;
+  height: 16px;
+}
+.obsText {
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--surface-2);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--sp-3) var(--sp-4);
+}
+.idTag {
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .panel {
+    width: 100%;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

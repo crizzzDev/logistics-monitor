@@ -1,0 +1,51 @@
+.section {
+  margin-bottom: var(--sp-6);
+}
+
+.head {
+  margin-bottom: var(--sp-4);
+}
+
+.title {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+@media (max-width: 800px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+.skeletonCard {
+  height: 92px;
+}
+
+@media (max-width: 900px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 460px) {
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+  }
+}

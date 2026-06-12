@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  animation: fadeIn 0.3s ease both;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.total {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+.activo {
+  background: var(--st-activo-bg);
+  color: var(--st-activo-fg);
+}
+.alarma {
+  background: var(--st-alarma-bg);
+  color: var(--st-alarma-fg);
+}
+.finalizado {
+  background: var(--st-finalizado-bg);
+  color: var(--st-finalizado-fg);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.value {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.label {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}

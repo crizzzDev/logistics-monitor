@@ -1,0 +1,31 @@
+/* Variantes de color para los badges. La clase global .badge aporta el layout
+   y el punto (::before usa currentColor, que toma el color definido aquí). */
+.activo {
+  color: var(--st-activo-fg);
+  background: var(--st-activo-bg);
+}
+.finalizado {
+  color: var(--st-finalizado-fg);
+  background: var(--st-finalizado-bg);
+}
+.alarma {
+  color: var(--st-alarma-fg);
+  background: var(--st-alarma-bg);
+}
+.pendiente {
+  color: var(--st-pendiente-fg);
+  background: var(--st-pendiente-bg);
+}
+
+.normal {
+  color: var(--lv-normal-fg);
+  background: var(--lv-normal-bg);
+}
+.media {
+  color: var(--lv-media-fg);
+  background: var(--lv-media-bg);
+}
+.alta {
+  color: var(--lv-alta-fg);
+  background: var(--lv-alta-bg);
+}

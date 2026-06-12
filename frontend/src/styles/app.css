@@ -1,0 +1,17 @@
+/* Estilos de layout de la aplicación (estructura general de la página). */
+
+.app-main {
+  padding-top: var(--sp-6);
+  padding-bottom: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.app-footer {
+  padding-top: var(--sp-5);
+  padding-bottom: var(--sp-8);
+  text-align: center;
+  color: var(--text-soft);
+  font-size: var(--fs-xs);
+}
